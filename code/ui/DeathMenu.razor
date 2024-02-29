@@ -1,0 +1,61 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="result">
+		<p>You Died</p>
+	</div>
+	<div class="result_detail">
+        <p>Survived @GetTimeString() </p>
+		<p>Squashed @manager.KillCount Skibidi</p>
+		<p>Got @manager.CollectCount coins</p>
+		<p>Total Score: </p>
+	</div>
+    <div class="total_score">@manager.Score</div>
+	<div class="options">
+		<div class="button restart_game" onclick=@RestartGame>
+			Play Again
+		</div>
+		<div class="button" onclick=@GoMainMenu>
+			Main Menu
+		</div>
+	</div>
+</root>
+
+@code
+{
+    [Property] SceneFile MainMenuScene { get; set; }
+    MyGameManager manager => Scene.GetAllComponents<MyGameManager>().FirstOrDefault();
+
+    string GetTimeString()
+    {
+        var time = manager.PlayerTimeSurvived;
+        var totalSeconds = (int)time;
+        var minutes = totalSeconds / 60;
+        var seconds = totalSeconds % 60;
+        var milliseconds = (time - totalSeconds) * 1000f;
+        return $"{minutes:00}:{seconds:00}:{milliseconds:000}";
+    }
+
+    void RestartGame()
+    {	
+        manager.RestartGame();
+        // 关闭死亡UI
+        GameObject.Enabled = false;
+    }
+
+    void GoMainMenu()
+    {
+        // TODO 会有警告
+        Scene.Load(MainMenuScene);
+        @* GameManager.ActiveScene.Load(MainMenuScene); *@
+        // manager.GoMainMenu();
+    }
+	
+	
+	/// <summary>
+    /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+    /// </summary>
+    protected override int BuildHash() => System.HashCode.Combine( manager.KillCount, manager.CollectCount, manager.PlayerTimeSurvived,manager.Score );
+}

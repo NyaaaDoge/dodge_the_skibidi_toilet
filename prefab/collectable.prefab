@@ -1,0 +1,55 @@
+{
+  "RootObject": {
+    "Id": "92ec4aca-6320-4d69-a430-8df810dd0e97",
+    "Name": "collectable",
+    "Enabled": true,
+    "Children": [
+      {
+        "Id": "8960776d-bbd2-4155-9806-be8196ab2b0f",
+        "Name": "Body",
+        "Position": "0,0,10",
+        "Scale": "0.3,0.3,0.3",
+        "Tags": "collectable",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": "materials/shine.vmat",
+            "Model": "models/dev/sphere.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,0,1"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "c149183d-d10b-4061-99dc-981bdce11000",
+            "Name": "Collectable Collider",
+            "Position": "0,0,0",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "SphereCollider",
+                "Center": "0,0,0",
+                "IsTrigger": true,
+                "Radius": 35,
+                "Static": false,
+                "Surface": null
+              },
+              {
+                "__type": "CollectableTrigger",
+                "CollectableExistTime": 7,
+                "CollectSound": "sounds/physics/glass.pane.impact.sound"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

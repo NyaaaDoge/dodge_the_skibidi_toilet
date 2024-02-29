@@ -1,0 +1,63 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="left">
+		<div class="leaderboard">
+			@if(GameLeaderboard is not null)
+			{
+				<h1>Highest Scores</h1>
+				<div class="entries">
+					@foreach(var entry in GameLeaderboard.Entries)
+					{
+						<div class="entry @IsMe(entry)">
+							<div class="rank">@entry.Rank</div>
+							<div class="name">
+								<image texture=@AvatarTexture(entry) />
+								<label>@entry.DisplayName</label>
+							</div>
+							<div class="value">@entry.FormattedValue</div>
+						</div>
+					}
+				</div>
+			}
+		</div>
+	</div>
+</root>
+
+@code
+{
+    Sandbox.Services.Leaderboards.Board GameLeaderboard;
+    long Highscore = 0;
+    async void FetchLeaderboardInfo()
+    {
+        GameLeaderboard = Sandbox.Services.Leaderboards.Get( "highscores" );
+        GameLeaderboard.MaxEntries = 10;
+        await GameLeaderboard.Refresh();
+        foreach (var entry in GameLeaderboard.Entries)
+        {
+            if (entry.SteamId == Game.SteamId)
+            {
+                Highscore = (long)entry.Value;
+            }
+        }
+    }
+    string IsMe(Sandbox.Services.Leaderboards.Entry entry)
+    {
+        return entry.Me ? "me" : "";
+    }
+
+    string AvatarTexture(Sandbox.Services.Leaderboards.Entry entry)
+    {
+        return $"avatar:{entry.SteamId}";
+    }
+
+    protected override void OnStart()
+    {
+        FetchLeaderboardInfo();
+    }
+
+    protected override int BuildHash() => System.HashCode.Combine( GameLeaderboard.Entries );
+
+}

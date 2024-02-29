@@ -1,0 +1,33 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title">@GameTitle</div>
+    <div class="main_menu">
+        <div class="button" onclick=@StartGame>
+            Play Game
+        </div>
+    </div
+</root>
+
+@code
+{
+    [Property, TextArea] public string GameTitle { get; set; } = "Dodge The Skibidi Toilet";
+    [Property] SceneFile GameScene { get; set; }
+    void StartGame()
+    {
+        // TODO 会有警告
+        // Scene.MakeNameUnique;
+        Scene.Load(GameScene);
+        @* GameManager.ActiveScene.Load(GameScene); *@
+    }
+    void QuitGame()
+    {
+        Sandbox.Game.Close();
+    }
+    // TODO 写How to play
+    // TODO 用 Sandbox.Game.Close() 可以退出游戏
+
+	protected override int BuildHash() => System.HashCode.Combine( GameTitle );
+}

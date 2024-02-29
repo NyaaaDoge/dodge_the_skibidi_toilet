@@ -1,0 +1,52 @@
+MainScreenMenuPanel
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: Poppins;
+	font-size: 64px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	pointer-events: all;
+
+	> .title
+	{	
+		top: 128px;
+		position: absolute;
+		font-size: 128px;
+		font-weight: bolder;
+		color: white;
+	}
+	> .main_menu
+	{	
+		position: absolute;
+		font-size: 64px;
+		font-weight: bold;
+		color: white;
+		flex-direction: column;
+		> .button
+		{	
+			width: 100%;
+			background-color: white;
+			color: black;
+			padding: 8px;
+			border-radius: 32px;
+			transition: all 0.1s ease;
+
+			&:hover
+			{	
+				sound-in: ui.button.over;
+				background-color: rgb(192, 192, 192);
+				transform: scale(1.1);
+			}
+			&:active
+			{
+				sound-in: ui.button.press;
+			}
+		}
+	}
+	
+}

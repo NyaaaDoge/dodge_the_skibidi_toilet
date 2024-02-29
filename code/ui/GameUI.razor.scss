@@ -1,0 +1,23 @@
+GameUI
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: Poppins;
+	font-size: 24px;
+
+	> .score
+	{
+		position: absolute;
+		top: 32px;
+		left: 32px;
+		font-size: 48px;
+		font-weight: bold;
+		text-stroke: 8px black;
+		color: white;
+		flex-direction: column;
+	}
+
+}

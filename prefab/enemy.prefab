@@ -1,0 +1,88 @@
+{
+  "RootObject": {
+    "Id": "1b650bd6-d970-45b1-bccf-8b31847fc385",
+    "Name": "enemy",
+    "Tags": "skibidi",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "Acceleration": 10,
+        "Bounciness": 0.31,
+        "GroundAngle": 45,
+        "Height": 12,
+        "IgnoreLayers": "wall",
+        "Radius": 12,
+        "StepHeight": 18
+      },
+      {
+        "__type": "Enemy1",
+        "Controller": {
+          "_type": "component",
+          "go": "1b650bd6-d970-45b1-bccf-8b31847fc385",
+          "component_type": "CharacterController"
+        },
+        "DestroyDistance": 500,
+        "MaxRotateOffset": 45,
+        "MaxSpeed": 350,
+        "MinRotateOffset": -45,
+        "MinSpeed": 80
+      }
+    ],
+    "Children": [
+      {
+        "Id": "e7fd3822-d89b-41b7-a79b-f5ca3e3df497",
+        "Name": "skibidi body",
+        "Scale": "1.15,1.15,1.15",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "asset/skibidi_toilet.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "BoxCollider",
+            "Center": "0,0,10",
+            "IsTrigger": true,
+            "Scale": "28,18,20",
+            "Static": false,
+            "Surface": null
+          }
+        ],
+        "Children": [
+          {
+            "Id": "90074bef-f215-4ccc-b98a-7e0b98380163",
+            "Name": "Skibidi Head Collider",
+            "Scale": "0.4347826,0.4347826,0.4347826",
+            "Tags": "skibidi_head",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "BoxCollider",
+                "Center": "8,0,65",
+                "IsTrigger": true,
+                "Scale": "40,32,45",
+                "Static": false,
+                "Surface": null
+              },
+              {
+                "__type": "SkibidiHeadTrigger",
+                "DeathSound": "sounds/player_use_fail.sound",
+                "DeathTime": 0.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

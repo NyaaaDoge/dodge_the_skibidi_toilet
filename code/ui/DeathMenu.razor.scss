@@ -1,0 +1,85 @@
+DeathMenu
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: Poppins;
+	font-size: 32px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	pointer-events: all;
+	background-color: rgba(black, 0.7);
+
+	.result
+	{	
+		top: 100px;
+		position: absolute;
+		font-size: 64px;
+		font-weight: bold;
+		color: red;
+		text-stroke: 4px black;
+	}
+
+	> .result_detail
+	{	
+		top: 200px;
+		position: absolute;
+		font-size: 32px;
+		justify-content: center;
+		// font-weight: bold;
+		color: white;
+		flex-direction: column;
+		font-weight: bold;
+		text-stroke: 8px black;
+	}
+
+	> .total_score
+	{	
+		top: 390px;
+		position: absolute;
+		font-size: 100px;
+		font-weight: bold;
+		color: gold;
+		flex-direction: column;
+		text-stroke: 8px black;
+	}
+	.options
+	{	
+		top: 128px;
+		font-size: 64px;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		color: white;
+		gap: 24px;
+
+		> .button
+		{
+			width: 100%;
+			background-color: rgb(145, 145, 145);
+			color: black;
+			font-weight: bold;
+			padding: 8px;
+			border-radius: 32px;
+			transition: all 0.1s ease;
+
+			&:hover
+			{	
+				sound-in: ui.button.over;
+				background-color: rgb(192, 192, 192);
+				transform: scale(1.1);
+			}
+			&:active
+			{
+				sound-in: ui.button.press;
+			}
+		}
+		> .restart_game
+		{
+			background-color: rgb(235, 235, 235);
+		}
+	}
+}

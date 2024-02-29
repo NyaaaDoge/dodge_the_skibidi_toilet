@@ -1,0 +1,364 @@
+{
+  "Id": "f6d01d63-a679-45a8-8b95-299fab94713d",
+  "GameObjects": [
+    {
+      "Id": "18c5f71f-53bc-4e7c-8419-d5bc2db13137",
+      "Name": "Main Camera",
+      "Position": "-325,0,325",
+      "Rotation": "0,0.3826834,0,0.9238796",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": true,
+          "OrthographicHeight": 384,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 700,
+          "ZNear": 10
+        },
+        {
+          "__type": "Bloom",
+          "__enabled": false,
+          "BloomColor": {
+            "color": [
+              {
+                "c": "1,1,1,1"
+              },
+              {
+                "t": 1,
+                "c": "1,0.45116,0.45116,0.82"
+              }
+            ],
+            "alpha": []
+          },
+          "BloomCurve": [
+            {
+              "y": 0.5
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ],
+          "Mode": "Additive",
+          "Strength": 0.28,
+          "Threshold": 0.5,
+          "ThresholdWidth": 0
+        }
+      ]
+    },
+    {
+      "Id": "533104fe-ec8a-4f8f-a928-dc7b48cb718f",
+      "Name": "Directional Light",
+      "Position": "0,0,200",
+      "Rotation": "-0.2194986,0.5299154,0.3134763,0.7567976",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "56b43dc9-10c2-435f-bc0b-22fb001e72e8",
+      "Name": "floor",
+      "Scale": "50,50,0.1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "1f3ebad1-84d3-4727-91af-94220b2487b7",
+      "Name": "invisible walls",
+      "Tags": "wall",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "c4ad4a79-47ea-4aa2-ab05-4616a6c8d8b9",
+          "Name": "wall1",
+          "Position": "270,-3,25",
+          "Scale": "1,17,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": false,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "157f1224-8a4c-466a-bf29-4d2b71899cf5",
+          "Name": "wall2",
+          "Position": "-290,-3,25",
+          "Scale": "1,17,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": false,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3876d067-2684-49fd-b361-be4a16535f7c",
+          "Name": "wall3",
+          "Position": "0,400,25",
+          "Scale": "12,1,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": false,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "138aa34a-76f6-4f4f-b7de-e39784e189a2",
+          "Name": "wall4",
+          "Position": "0,-405,25",
+          "Scale": "12,1,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": false,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "e1074171-2cc2-4882-a248-42dba285d5b3",
+      "Name": "Manager",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "5fe2a1d7-6b8b-4384-a8bb-0f0a7874bdf7",
+          "Name": "game manager",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "MyGameManager",
+              "Difficulty": 0,
+              "TimeToNextDifficultyIncrease": 15,
+              "DeathMenu": {
+                "_type": "gameobject",
+                "go": "15258090-78e9-44ab-ac3e-a0685545a57a"
+              },
+              "GameUI": {
+                "_type": "gameobject",
+                "go": "89b133c3-1a1e-44a3-a2fc-d05f6851229f"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "560c318e-bae7-42ff-9a26-b188ef61dc2d",
+          "Name": "enemy spawner",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "EnemySpawner",
+              "EnableEnemySpawning": true,
+              "Enemy": {
+                "_type": "gameobject",
+                "prefab": "prefab/enemy.prefab"
+              },
+              "EnemySpawnMarker1": "300,400,1",
+              "EnemySpawnMarker2": "300,-400,1",
+              "EnemySpawnMarker3": "-300,-400,1",
+              "EnemySpawnMarker4": "-300,400,1",
+              "EnemySpawnTimeEach": 0.5,
+              "MaxRotateOffset": 45,
+              "MaxSpeed": 350,
+              "MinRotateOffset": -45,
+              "MinSpeed": 80
+            }
+          ]
+        },
+        {
+          "Id": "3e33605c-fb25-43bd-b9ac-7090eb7347f0",
+          "Name": "collectable spawner",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "CollectableSpawner",
+              "Collectable": {
+                "_type": "gameobject",
+                "prefab": "prefab/collectable.prefab"
+              },
+              "CollectableSpawnMarker1": "250,300,15",
+              "CollectableSpawnMarker2": "250,-300,15",
+              "CollectableSpawnMarker3": "-250,-300,15",
+              "CollectableSpawnMarker4": "-250,300,15",
+              "CollectableSpawnTimeEach": 4.5,
+              "EnableCollectableSpawning": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "92d09046-daa0-4bc9-b2bd-c419af4f6f7e",
+      "Name": "Game Screen",
+      "Position": "-162.9514,-320.2675,282.7265",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        }
+      ],
+      "Children": [
+        {
+          "Id": "89b133c3-1a1e-44a3-a2fc-d05f6851229f",
+          "Name": "Game UI",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "GameUI",
+              "MyGameManager": {
+                "_type": "component",
+                "go": "5fe2a1d7-6b8b-4384-a8bb-0f0a7874bdf7",
+                "component_type": "MyGameManager"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "15258090-78e9-44ab-ac3e-a0685545a57a",
+          "Name": "Death UI",
+          "Position": "0,0,0",
+          "Components": [
+            {
+              "__type": "DeathMenu",
+              "MainMenuScene": "scenes/main menu.scene"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "5de76fa3-30f8-44d5-9a51-ba8951425d9b",
+      "Name": "player",
+      "Enabled": true,
+      "__Prefab": "prefab/player.prefab"
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "main",
+  "Description": "",
+  "LastSaved": "2024-02-29T20:19:44.7877583\u002B08:00",
+  "__references": []
+}
